@@ -52,8 +52,9 @@ async function getShuffledDeck() {
 
 async function draw(deck_id) {
 	let resp = await axios.get(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`);
-	const suit = resp.data.cards[0].suit;
-	const value = resp.data.cards[0].value;
+	// const suit = resp.data.cards[0].suit;
+  // const value = resp.data.cards[0].value;
+  let { suit, value } = data.cards[0];
 	return `${value} of ${suit}`;
 	// return resp;
 }
